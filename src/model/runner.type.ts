@@ -1,1 +1,1 @@
-export type Runner = (context: unknown) => void;
+export type Runner = (context: any) => void;

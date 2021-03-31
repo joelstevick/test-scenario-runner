@@ -1,1 +1,1 @@
-export type ContextFactory = (data: unknown) => () => unknown;
+export type ContextFactory = (data: any) => () => any;
