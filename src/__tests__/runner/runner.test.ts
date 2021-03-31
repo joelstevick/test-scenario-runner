@@ -1,5 +1,6 @@
 import { getContext } from '../../get-context';
 import { Scenario } from '../../model/scenario.interface';
+import { runScenario } from '../../run-scenario';
 
 describe('Runner', () => {
   const scenarioWithRunner: Scenario = {
@@ -14,7 +15,7 @@ describe('Runner', () => {
         };
       },
     },
-    runner: (ctx) => {},
+    runner: (ctx) => { },
   };
 
   const scenarioWithNoRunner: Scenario = {
@@ -31,13 +32,14 @@ describe('Runner', () => {
     },
   };
 
-  it('should be obtained from the higher order function in scenario.runner', () => {
+  it('should be obtained from the higher order function in scenario.runner', async () => {
     const runnerSpy = spyOn(scenarioWithRunner, 'runner');
 
-    expect(getContext(scenarioWithRunner)().id).toBe(1);
+    await runScenario(scenarioWithRunner, null);
+    expect(runnerSpy).toHaveBeenCalled();
   });
 
-  it('should not fail in the case that no context is provided', () => {
-    expect(getContext(scenarioWithNoRunner)).toBeUndefined();
+  it('should not fail in the case that no context is provided', async () => {
+    await runScenario(scenarioWithNoRunner, null);
   });
 });

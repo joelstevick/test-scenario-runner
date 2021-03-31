@@ -2,7 +2,7 @@ import { getContext } from './get-context';
 import { Context } from './model/context.interface';
 import { Scenario } from './model/scenario.interface';
 
-export async function runScenario(scenario: Scenario, context: Context) {
+export async function runScenario(scenario: Scenario, context: Context | null | undefined) {
   if (typeof scenario?.runner === 'function') {
     const contextFn = getContext(scenario);
 
