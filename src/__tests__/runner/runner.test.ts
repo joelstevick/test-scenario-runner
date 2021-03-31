@@ -15,7 +15,7 @@ describe('Runner', () => {
         };
       },
     },
-    runner: (ctx) => { },
+    runner: (ctx) => {},
   };
 
   const scenarioWithNoRunner: Scenario = {
@@ -45,11 +45,12 @@ describe('Runner', () => {
       },
     },
 
-    children: [{
-      description: 'child',
-      runner: (ctx) => { },
-    }
-    ]
+    children: [
+      {
+        description: 'child',
+        runner: (ctx) => {},
+      },
+    ],
   };
   it('should call the runner with the context', async () => {
     const runnerSpy = spyOn(scenarioWithRunner, 'runner');
@@ -65,8 +66,7 @@ describe('Runner', () => {
   it('should call child runners with the context', async () => {
     const runnerSpy = spyOn(scenarioWithChildren.children![0], 'runner');
 
-    await runScenario(scenarioWithChildren, {foo: 'bar'});
+    await runScenario(scenarioWithChildren, { foo: 'bar' });
     expect(runnerSpy).toHaveBeenCalledWith({ id: 1 });
   });
-
 });
