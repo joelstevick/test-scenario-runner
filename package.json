@@ -1,0 +1,32 @@
+{
+  "files": [
+    "lib/**/*"
+  ],
+  "name": "test-scenario-runner",
+  "version": "1.0.0",
+  "description": "README tbd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelstevick/test-scenario-runner.git"
+  },
+  "keywords": [],
+  "author": "Joel Stevick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joelstevick/test-scenario-runner/issues"
+  },
+  "homepage": "https://github.com/joelstevick/test-scenario-runner#readme",
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.2.3"
+  },
+}
