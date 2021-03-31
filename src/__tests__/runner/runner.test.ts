@@ -15,7 +15,7 @@ describe('Runner', () => {
         };
       },
     },
-    runner: (ctx) => { },
+    runner: (ctx) => {},
   };
 
   const scenarioWithNoRunner: Scenario = {
@@ -36,7 +36,7 @@ describe('Runner', () => {
     const runnerSpy = spyOn(scenarioWithRunner, 'runner');
 
     await runScenario(scenarioWithRunner, null);
-    expect(runnerSpy).toHaveBeenCalledWith({id: 1});
+    expect(runnerSpy).toHaveBeenCalledWith({ id: 1 });
   });
 
   it('should not fail in the case that no context is provided', async () => {
