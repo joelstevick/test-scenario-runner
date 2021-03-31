@@ -10,8 +10,8 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json --no-error-on-unmatched-pattern",
+    "format": "prettier --write \"src/**/(*.js|.ts|.jsx|.tsx|.md)\"",
+    "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
