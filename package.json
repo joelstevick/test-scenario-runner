@@ -8,7 +8,7 @@
   "main": "main/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest --config jestconfig.json --coverage",
     "build": "tsc",
     "format": "prettier --write \"src/**/(*.js|*.ts)\"",
     "lint": "tslint -p tsconfig.json",
