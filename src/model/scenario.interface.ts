@@ -5,6 +5,6 @@ import { Runner } from './runner.type';
 export interface Scenario {
   description: string;
   context?: Context;
-  runner?: Runner
+  runner?: Runner;
   children?: Scenario[];
 }
