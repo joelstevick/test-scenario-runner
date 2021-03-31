@@ -3,14 +3,14 @@
     "lib/**/*"
   ],
   "name": "test-scenario-runner",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A test scenario runner",
   "main": "main/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
-    "format": "prettier --write \"src/**/(*.js|.ts|.jsx|.tsx|.md)\"",
+    "format": "prettier --write \"src/**/(*.js|*.ts)\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
