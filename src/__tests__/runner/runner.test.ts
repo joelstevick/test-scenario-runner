@@ -52,21 +52,29 @@ describe('Runner', () => {
       },
     ],
   };
+
+  let contextFn_withChildren: any;
+  let contextFn_withRunner: any;
+
+  beforeEach(async () => {
+     contextFn_withChildren = await getContext(scenarioWithChildren);
+     contextFn_withRunner = await getContext(scenarioWithRunner);
+  })
   it('should call the runner with the context', async () => {
     const runnerSpy = spyOn(scenarioWithRunner, 'runner');
 
-    await runScenario(scenarioWithRunner, null);
-    expect(runnerSpy).toHaveBeenCalledWith({ id: 1 });
+    runScenario(scenarioWithRunner, contextFn_withRunner());
+    expect(runnerSpy).toHaveBeenCalledWith(contextFn_withRunner());
   });
 
   it('should not fail in the case that no runner is provided', async () => {
-    await runScenario(scenarioWithNoRunner, null);
+    runScenario(scenarioWithNoRunner, null);
   });
 
   it('should call child runners with the context', async () => {
     const runnerSpy = spyOn(scenarioWithChildren.children![0], 'runner');
 
-    await runScenario(scenarioWithChildren, { foo: 'bar' });
-    expect(runnerSpy).toHaveBeenCalledWith({ id: 1 });
+    runScenario(scenarioWithChildren, contextFn_withChildren());
+    expect(runnerSpy).toHaveBeenCalledWith(contextFn_withChildren());
   });
 });
