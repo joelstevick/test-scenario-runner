@@ -57,9 +57,9 @@ describe('Runner', () => {
   let contextFn_withRunner: any;
 
   beforeEach(async () => {
-     contextFn_withChildren = await getContext(scenarioWithChildren);
-     contextFn_withRunner = await getContext(scenarioWithRunner);
-  })
+    contextFn_withChildren = await getContext(scenarioWithChildren);
+    contextFn_withRunner = await getContext(scenarioWithRunner);
+  });
   it('should call the runner with the context', async () => {
     const runnerSpy = spyOn(scenarioWithRunner, 'runner');
 
