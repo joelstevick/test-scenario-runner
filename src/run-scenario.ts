@@ -1,11 +1,14 @@
 import { getContext } from './get-context';
 import { Context } from './model/context.interface';
 import { Scenario } from './model/scenario.interface';
+var colors = require('colors/safe');
+
 
 export async function runScenario(scenario: Scenario, contextData: any) {
   // output the description
-  console.log(scenario.description);
-  
+  // tslint:disable-next-line:no-console
+  console.log(colors.green(scenario.description));
+
   // get the context
   const contextFn = getContext(scenario);
 
