@@ -1,1 +1,1 @@
-export type ContextFactory = (data: any) => () => Promise<any>;
+export type ContextFactory = (data: any) => Promise<() => any>;
