@@ -35,7 +35,6 @@ describe('Context', () => {
     expect(typeof contextFn).toBe('function');
 
     await expect(contextFn().id).toBe(1);
-
   });
 
   it('should not fail in the case that no factory is provided', async () => {
