@@ -9,7 +9,7 @@ describe('Runner', () => {
       data: {
         id: 1,
       },
-      factory: (ctxData) => {
+      factory: async (ctxData) => {
         return () => {
           return ctxData;
         };
@@ -24,7 +24,7 @@ describe('Runner', () => {
       data: {
         id: 1,
       },
-      factory: (ctxData) => {
+      factory: async (ctxData) => {
         return () => {
           return ctxData;
         };
@@ -38,7 +38,7 @@ describe('Runner', () => {
       data: {
         id: 1,
       },
-      factory: (ctxData) => {
+      factory: async (ctxData) => {
         return () => {
           return ctxData;
         };

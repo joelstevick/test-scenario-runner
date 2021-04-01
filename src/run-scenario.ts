@@ -8,7 +8,7 @@ export async function runScenario(scenario: Scenario, contextData: any) {
   process.stdout.write(colors.green(scenario.description) + '\n');
 
   // get the context
-  const contextFn = getContext(scenario);
+  const contextFn = await getContext(scenario);
 
   if (typeof contextFn === 'function') {
     contextData = await contextFn();

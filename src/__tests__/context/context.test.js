@@ -6,7 +6,7 @@ describe('Context', () => {
       data: {
         id: 1,
       },
-      factory: (ctxData) => {
+      factory: async (ctxData) => {
         return () => {
           return ctxData;
         };
@@ -29,15 +29,22 @@ describe('Context', () => {
   };
   const scenarioWithNoContext = {};
 
-  it('should be obtained from the higher order function in context.factory', () => {
-    expect(getContext(scenarioWithFactory)().id).toBe(1);
+  it('should be obtained from the higher order function in context.factory', async () => {
+    const contextFn = await getContext(scenarioWithFactory);
+
+    expect(typeof contextFn).toBe('function');
+
+    await expect(contextFn().id).toBe(1);
+
   });
 
-  it('should not fail in the case that no factory is provided', () => {
-    expect(getContext(scenarioWithContextOnly)).toBeUndefined();
+  it('should not fail in the case that no factory is provided', async () => {
+    const contextFn = await getContext(scenarioWithContextOnly);
+    await expect(contextFn).toBeUndefined();
   });
 
-  it('should not fail in the case that no context is provided', () => {
-    expect(getContext(scenarioWithNoContext)).toBeUndefined();
+  it('should not fail in the case that no context is provided', async () => {
+    const contextFn = await getContext(scenarioWithNoContext);
+    await expect(contextFn).toBeUndefined();
   });
 });
