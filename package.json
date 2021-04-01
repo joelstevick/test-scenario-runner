@@ -3,7 +3,7 @@
     "lib/**/*"
   ],
   "name": "test-scenario-runner",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "A test scenario runner",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
