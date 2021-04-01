@@ -5,8 +5,7 @@ import * as colors from 'colors/safe';
 
 export async function runScenario(scenario: Scenario, contextData: any) {
   // output the description
-  // tslint:disable-next-line:no-console
-  console.log(colors.green(scenario.description));
+  process.stdout.write(colors.green(scenario.description) + '\n');
 
   // get the context
   const contextFn = getContext(scenario);
