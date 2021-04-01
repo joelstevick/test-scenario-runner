@@ -11,7 +11,7 @@ export async function runScenario(scenario: Scenario, contextData: any) {
   const contextFn = getContext(scenario);
 
   if (typeof contextFn === 'function') {
-    contextData = contextFn();
+    contextData = await contextFn();
   }
 
   // optional runner
