@@ -3,6 +3,9 @@ import { Context } from './model/context.interface';
 import { Scenario } from './model/scenario.interface';
 
 export async function runScenario(scenario: Scenario, contextData: any) {
+  // output the description
+  console.log(scenario.description);
+  
   // get the context
   const contextFn = getContext(scenario);
 
