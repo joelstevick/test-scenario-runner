@@ -1,7 +1,7 @@
 import { getContext } from './get-context';
 import { Context } from './model/context.interface';
 import { Scenario } from './model/scenario.interface';
-const colors = require('colors/safe');
+import * as colors from 'colors/safe';
 
 export async function runScenario(scenario: Scenario, contextData: any) {
   // output the description
