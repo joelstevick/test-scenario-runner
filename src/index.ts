@@ -6,5 +6,5 @@ export { ContextFactory, Context, Runner, Scenario };
 export { getContext };
 
 export function runScenario(scenario: Scenario, context: Context) {
-    return _runScenario(scenario, context);
+  return _runScenario(scenario, context);
 }
